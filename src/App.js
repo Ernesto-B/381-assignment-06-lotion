@@ -1,9 +1,17 @@
 import React from 'react';
-// import TextEditor from './components/TextEditor';
+import PreHeader from './components/PreHeader';
+import Header from './components/Header';
+import LeftMenu from './components/LeftMenu';
+import TextEditor from './components/TextEditor';
 
 function App() {
   return (
-    <h1 className='text-black text-4xl'>Lotion</h1>
+    <div>
+      <PreHeader />
+      <Header />
+      {/* <LeftMenu /> */}
+      {/* <TextEditor /> */}
+    </div>
 
   )
 }
