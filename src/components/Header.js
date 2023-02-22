@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import  LeftMenu  from './LeftMenu';
+import TextEditor from './TextEditor';
+import PreTextEditor from './PreTextEditor';
 
 export default function Header() {
   const [showLeftMenu, setShowLeftMenu] = useState(true);
@@ -19,7 +21,14 @@ export default function Header() {
           <h1 className="text-black text-4xl font-bold">Lotion</h1>
           <h2 className="font-bold text-gray-500 text-s">Like notion, but worse</h2>
       </div>
-      <LeftMenu showLeftMenu={showLeftMenu} />
+      <div id='main-body' className="flex w-100">
+        <LeftMenu showLeftMenu={showLeftMenu} />
+        <div id='text-editor-and-pre-text-editor'>
+          <PreTextEditor />
+          <TextEditor />
+        </div>
+
+      </div>
     </div>
   )
 }

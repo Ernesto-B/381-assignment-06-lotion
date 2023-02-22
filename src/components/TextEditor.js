@@ -1,17 +1,15 @@
-import React from 'react'
-import { useQuill } from 'react-quill';
-import 'quill/dist/quill.snow.css';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 export default function TextEditor() {
-
-    const { quill, quillRef } = useQuill();
+    const [value, setValue] = useState('Your Note Here');
 
   return (
-    <div>
-        <div className="w-40 h-40">
-            <div ref={quillRef} />
-        </div>
+    <div id='editor-container' className="flex w-[100vw] h-[100vh]">
+            <ReactQuill theme="snow" value={value} onChange={setValue} className="h-full w-full overflow-hidden"/>
     </div>
   )
 }
