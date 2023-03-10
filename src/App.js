@@ -1,18 +1,23 @@
-import React from 'react';
-import PreHeader from './components/PreHeader';
-import Header from './components/Header';
-// import LeftMenu from './components/LeftMenu';
-// import TextEditor from './components/TextEditor';
+// React imports
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+
+// Component imports
+import Home from "./components/HomePage";
+import Edit from "./components/EditPage";
+import Layout from "./components/Layout";
 
 function App() {
-  return (
-    <div>
-      <PreHeader />
-      <Header />
-      {/* <LeftMenu /> */}
-      {/* <TextEditor /> */}
-    </div>
-
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout/>}>
+          <Route path="/" element={<Navigate to ="/notes" />}></Route>
+          <Route path="/notes" element={<Home />}></Route>
+          <Route path="/notes/:id" element={<Home />}></Route>
+          <Route path="/notes/:id/edit" element={<Edit />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

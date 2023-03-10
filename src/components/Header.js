@@ -1,34 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
-import  LeftMenu  from './LeftMenu';
-import TextEditor from './TextEditor';
-import PreTextEditor from './PreTextEditor';
-
-export default function Header() {
-  const [showLeftMenu, setShowLeftMenu] = useState(true);
-
-  const handleClick = () => {
-    setShowLeftMenu(!showLeftMenu);
-  }
-
+const Header = (props) => {
   return (
-    <div id='container'>
-      
-      
-    
-      <div className="flex flex-col justify-center items-center pt-3 pb-3  border-b-[2px] border-gray-200">
-          <p className="flex absolute w-16 h-16 left-4 text-3xl items-center justify-center font-bold hover:bg-gray-600 hover:text-white hover:cursor-pointer" onClick={handleClick}>&#9776;</p>
-          <h1 className="text-black text-4xl font-bold">Lotion</h1>
-          <h2 className="font-bold text-gray-500 text-s">Like notion, but worse</h2>
+    <header className="grid grid-cols-3 justify-items-center py-3 px-6 border-b-2 select-none">
+      <button className="text-gray-700  focus:outline-none text-3xl justify-self-start hover:text-4xl hover:text-gray-900" onClick={props.onToggleSidebar}>
+        &#9776;
+      </button>
+      <div >
+        <h1 className="text-3xl font-bold text-center">Lotion</h1>
+        <h2 className='text-xs text-gray-600 font-semibold'>Like Notion, but worse.</h2>
       </div>
-      <div id='main-body' className="flex w-100">
-        <LeftMenu showLeftMenu={showLeftMenu} />
-        <div id='text-editor-and-pre-text-editor'>
-          <PreTextEditor />
-          <TextEditor />
-        </div>
-
-      </div>
-    </div>
+    </header>
   )
 }
+
+export default Header
