@@ -1,2 +1,2 @@
 Drop your Netlify application address here.
-<!-- https://lotion-rhamzax.netlify.app/notes -->
+https://ernesto-b-lotion-assignment.netlify.app
